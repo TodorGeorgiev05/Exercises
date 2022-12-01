@@ -30,8 +30,6 @@ USE soft_uni;
 
 -- select * from employees where last_name IN ('JONES', 'BLAKE', 'SCOTT', 'KING', 'FORD');
 
--- https://solutioncenter.apexsql.com/how-to-export-import-mysql-data-to-excel/
--- INTO OUTFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/2actor.txt' FIELDS TERMINATED BY ',' ENCLOSED BY '"' LINES TERMINATED BY '\r\n'    
 
 -- https://www.w3resource.com/mysql-exercises/aggregate-function-exercises/
 
@@ -46,8 +44,6 @@ USE soft_uni;
 -- where job_title = 'Purchasing Manager'
 
 -- select avg(salary), min(salary), max(salary) from employees
-
--- TODO: from 7 and to research for subqueries and to do https://www.w3resource.com/sql-exercises/sql-subqueries-exercises.php
 
 -- select first_name, last_name, salary
 -- from employees 
@@ -115,5 +111,43 @@ USE soft_uni;
 -- select first_name, last_name, department_id, salary from employees where department_id in
 -- (select department_id from employees where first_name  like 'A%') and salary >
 -- (select avg(salary) from employees)
--- TODO: from 15. problem and to research for subqueries and to do https://www.w3resource.com/sql-exercises/sql-subqueries-exercises.php
+
+-- 16
+-- select first_name, last_name, job_title, employee_id
+-- from employees
+-- where address_id in 
+-- (select address_id
+-- from  addresses
+-- where town_id in
+-- (select town_id from towns where name = 'San Francisco'))
+
+-- 17
+-- select employee_id, first_name, last_name, job_title, salary
+-- from employees
+-- where salary < ANY
+-- (select salary 
+-- from employees 
+-- where job_title = 'Tool Designer')
+
+-- 19
+-- select 	employee_id, first_name, last_name, job_title, salary 
+-- from employees
+-- where salary > ALL	
+-- (select salary 
+-- from employees
+-- where job_title = 'Network Manager')
+-- AND job_title <> 'Network Manager';
+
+-- 20
+-- select employee_id, first_name, last_name, job_title
+-- from employees
+-- where salary > ALL
+-- (select AVG(salary)
+-- from employees 
+-- GROUP BY department_id);
+
+-- TODO: from 20. problem and to research for subqueries and to do https://www.w3resource.com/sql-exercises/sql-subqueries-exercises.php
+-- PISHTOV 
+-- https://solutioncenter.apexsql.com/how-to-export-import-mysql-data-to-excel/
+-- INTO OUTFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/2actor.txt' FIELDS TERMINATED BY ',' ENCLOSED BY '"' LINES TERMINATED BY '\r\n'    
 
