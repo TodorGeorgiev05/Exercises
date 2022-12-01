@@ -49,4 +49,71 @@ USE soft_uni;
 
 -- TODO: from 7 and to research for subqueries and to do https://www.w3resource.com/sql-exercises/sql-subqueries-exercises.php
 
+-- select first_name, last_name, salary
+-- from employees 
+-- where salary > 
+-- ( select salary 
+-- from employees 
+-- where employee_id = 2);
+
+-- select * from employees 
+-- where department_id = 
+-- (select department_id
+-- from departments	
+-- where department_id = 3)
+
+-- SELECT first_name, last_name, salary, department_id  
+-- FROM employees  
+-- WHERE salary IN  
+-- ( SELECT MIN(salary)  
+-- FROM employees  
+-- GROUP BY department_id 
+-- );
+
+-- select first_name, last_name, employee_id, salary
+-- from employees
+-- where salary >
+-- (select AVG(salary) 
+-- from employees)
+
+-- SELECT first_name, last_name, employee_id, salary 
+-- FROM employees  
+-- WHERE department_id = 
+-- (SELECT department_id  
+-- FROM departments  
+-- WHERE name = 'Tool Design' 
+-- );
+
+-- SELECT e.department_id, first_name, job_title, d.name
+-- FROM employees e, departments d
+-- WHERE e.department_id = d.department_id
+-- AND  d.name = 'Finance';
+
+-- select * from employees where employee_id IN(134,159,183)
+
+-- select * from employees where salary between 9000 and 15000
+
+-- select * from employees where salary between 
+-- (select min(salary))and 12000
+
+-- select * from employees 
+-- where department_id not in
+-- (select department_id 
+-- from departments 
+-- where manager_id between 100 and 200)
+
+-- select * from employees where salary in
+-- (select max(salary) from employees
+-- https://www.w3resource.com/sql-exercises/sql-subqueries-exercise-12.php да питам господина да обясни точно как работи кода
+
+-- select first_name, last_name, hire_date, department_id from employees where department_id =
+-- (select department_id from employees where first_name = 'Alex')
+
+-- select first_name, last_name, hire_date, department_id from employees where department_id in
+-- (select department_id from employees where first_name  like 'A%')
+
+-- select first_name, last_name, department_id, salary from employees where department_id in
+-- (select department_id from employees where first_name  like 'A%') and salary >
+-- (select avg(salary) from employees)
+-- TODO: from 15. problem and to research for subqueries and to do https://www.w3resource.com/sql-exercises/sql-subqueries-exercises.php
 
