@@ -62,3 +62,12 @@ REFERENCES exams(exam_id)
 DROP TABLE student_exams; 
 DROP TABLE students;
 DROP TABLE exams;
+
+
+CREATE TABLE teachers(
+teacher_id int primary key,
+name varchar(50),	
+manager_id int);
+
+ALTER TABLE teachers
+  ADD FOREIGN KEY (manager_id) REFERENCES teachers (teacher_id)
